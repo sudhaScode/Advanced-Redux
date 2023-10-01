@@ -11,7 +11,7 @@ const mainCartSlice = createSlice({
         },
         itemsInCart(state, action){
             const newItem = action.payload;
-            console.log(newItem);
+            //console.log(newItem);
             const exitingItem = state.items.find(item =>item.id === newItem.id);
             if(!exitingItem){
                 state.items.push(newItem);
@@ -45,19 +45,23 @@ const mainCartSlice = createSlice({
         },
         decreaseQuantity(state, action){
             const id = action.payload;
+            console.log(id);
             const exitingItem = state.items.find(item =>item.id === id);
             if(exitingItem){
                 state.items.map(item =>{
-                    if (item.quantity<=0){
+                    if (item.id === id){
+                    if (item.quantity===1 ){
                         state.items.pop(id);
-                        return true;
                     }
                     else{
                     item.quantity = item.quantity -1;
                     //console.log(item.quantity);
-                    return false;
+
                     }
                 }
+                return true;
+                }
+               
                     );
             }
         },
