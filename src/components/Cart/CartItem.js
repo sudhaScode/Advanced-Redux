@@ -4,7 +4,7 @@ import {  cartActions } from '../Store';
 
 const CartItem = (props) => {
   const { id, title, quantity, total, price } = props.item;
-  console.log(id);
+  //console.log(id);
    const dispatch = useDispatch();
   const decreaseHandler = ()=>{
       dispatch(cartActions.decreaseQuantity(id));

@@ -9,7 +9,7 @@ const Cart = (props) => {
   const quantity = useSelector(state => state.cartQuantity.quantity);
   const showCart = useSelector(state=>state.showCart.cart);
   const cartItems = useSelector(state=> state.showCart.items);
-  console.log(cartItems);
+  //console.log(cartItems);
   
 
   return (
